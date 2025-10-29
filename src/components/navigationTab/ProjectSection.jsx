@@ -6,7 +6,7 @@ import linkguard5 from "../../assets/images/linkguard/UI_settings.PNG";
 import linkguard from "../../assets/images/linkguard/Linkguard.png";
 import shopco from "../../assets/images/cover.jpg";
 import me from "../../assets/images/CJLogo.png";
-import theBox from "../../assets/images/coverTheBox.png";
+import theBox from "../../assets/images/coverTheBox.PNG";
 import { IoLogoGithub, FaTowerBroadcast, MdDownload } from "../ReactIcons";
 import { ButtonCard } from "../Button";
 
