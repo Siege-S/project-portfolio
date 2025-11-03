@@ -32,7 +32,7 @@ function App() {
           handleContactBtn={handleContactBtn}
         />
       </div>
-      <main className="container mx-auto p-4">
+      <main className="container mx-auto p-4 xl:px-0">
         <div className="lg:hidden">{Tabs[tab]}</div>
 
         <div className="hidden lg:flex gap-5">

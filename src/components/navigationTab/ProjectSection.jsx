@@ -4,6 +4,7 @@ import linkguard3 from "../../assets/images/linkguard/UI_scan1.PNG";
 import linkguard4 from "../../assets/images/linkguard/UI_scan2.PNG";
 import linkguard5 from "../../assets/images/linkguard/UI_settings.PNG";
 import linkguard from "../../assets/images/linkguard/Linkguard.png";
+import linkguardCover from "../../assets/images/linkguard/linkguard_cover.PNG";
 import shopco from "../../assets/images/cover.jpg";
 import me from "../../assets/images/CJLogo.png";
 import theBox from "../../assets/images/coverTheBox.PNG";
@@ -23,7 +24,7 @@ import { Pagination } from "swiper/modules";
 export default function ProjectSection() {
   const posts = [
     {
-      username: "LinkGuard: A Mobile Link Checker For Android Devices",
+      title: "LinkGuard: A Mobile Link Checker For Android Devices",
       date: "September 2024",
       postContext:
         "LinkGuard is an android mobile app that detects SMS messages with links, captures a snapshot of the link, and swiftly analyzes it for potential smishing threats and malicious activity, ensuring your protection",
@@ -42,7 +43,18 @@ export default function ProjectSection() {
       techUsed: ["Android Studio", "Sqlite", "Java"],
     },
     {
-      username: "Shopco: E-commerce Front-end Development Project",
+      title: "LinkGuard: Responsive Website",
+      date: "November 2025",
+      postContext:
+        "LinkGuard is an android mobile app that detects SMS messages with links, captures a snapshot of the link, and swiftly analyzes it for potential smishing threats and malicious activity, ensuring your protection",
+      postImage: [linkguardCover],
+      repoURL: "https://github.com/Siege-S/project-linkguard",
+      hostURL: "https://project-linkguard.vercel.app/",
+      downloadURL: "",
+      techUsed: ["React", "Tailwind", "Vite"],
+    },
+    {
+      title: "Shopco: E-commerce Front-end Development Project",
       date: "September 2025",
       postContext:
         "Shopco E-commerce is a fully responsive, mobile-first website built with React.js and Vite, styled using Tailwind CSS.",
@@ -52,7 +64,7 @@ export default function ProjectSection() {
       techUsed: ["React", "Tailwind", "React Router", "Vite"],
     },
     {
-      username: "The Box: Landing Page Front-end Development Project",
+      title: "The Box: Landing Page Front-end Development Project",
       date: "August 2025",
       postContext:
         "This project is a frontend recreation of a Figma landing page. I converted the design into a fully responsive webpage using HTML, CSS, JavaScript, and Tailwind CSS.",
@@ -67,7 +79,7 @@ export default function ProjectSection() {
       {posts.map((post, index) => (
         <ProjectCard
           key={index}
-          username={post.username}
+          title={post.title}
           date={post.date}
           postContext={post.postContext}
           postImage={post.postImage}
@@ -82,7 +94,7 @@ export default function ProjectSection() {
 }
 
 const ProjectCard = ({
-  username,
+  title,
   date,
   postContext,
   postImage,
@@ -92,17 +104,17 @@ const ProjectCard = ({
   postTech,
 }) => {
   return (
-    <div className=" bg-primary pt-4 pb-1 px-4 overflow-hidden border border-lightGrey rounded-xl">
-      <div className="flex">
+    <div className=" bg-primary pt-4 pb-1 overflow-hidden border border-lightGrey rounded-xl">
+      <div className="flex  px-4">
         <div className="w-10 border-1 border-white bg-white/50 rounded-full h-fit">
           <img src={me} alt="me" />
         </div>
         <div className="flex flex-col pl-2 text-white">
-          <span className="text-sm font-semibold text-neon">{username}</span>
+          <span className="text-sm font-semibold text-neon">{title}</span>
           <span className="text-xs pt-1">{date}</span>
         </div>
       </div>
-      <div className=" text-white font-light py-3">
+      <div className=" text-white font-light p-4">
         {postContext}
         <ul className="flex gap-4 mt-2 flex-wrap">
           {postTech &&
@@ -117,7 +129,7 @@ const ProjectCard = ({
         </ul>
       </div>
 
-      <div className="flex justify-center rounded-xl mb-2 overflow-hidden bg-dark ">
+      <div className="flex justify-center mb-2 overflow-hidden bg-dark ">
         {postImage.length > 1 ? (
           <ImageSwiper images={postImage} />
         ) : (
